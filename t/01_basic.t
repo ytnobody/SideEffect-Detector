@@ -1,16 +1,16 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Exception;
 use SideEffect::Detector;
 
-my $x = sub {
-    open my $fh, '<', __FILE__;
-    my $data = join('', <$fh>);
-    close $fh;
-    return $data;
-};
+my $x = <<'EOF';
+open my $fh, '<', __FILE__;
+my $data = join('', <$fh>);
+close $fh;
+return $data;
+EOF
 
-SideEffect::Detector->detect($x);
+throws_ok { SideEffect::Detector->detect($x) } qr/^a side-effect \"open\" near line 1, type is BuiltinFunc/;
 
-ok 1;
 done_testing;
