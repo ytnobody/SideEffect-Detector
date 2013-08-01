@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Detect Side-Effect from Code",
    "author" : [
       "ytnobody <ytnobody@gmail.com>"
    ],
@@ -52,5 +52,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/ytnobody/SideEffect-Detector/issues"
+      },
+      "homepage" : "https://github.com/ytnobody/SideEffect-Detector",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/ytnobody/SideEffect-Detector.git",
+         "web" : "https://github.com/ytnobody/SideEffect-Detector"
+      }
+   },
    "version" : "0.01"
 }

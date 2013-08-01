@@ -1,14 +1,24 @@
 # NAME
 
-SideEffect::Detector - It's new $module
+SideEffect::Detector - Detect Side-Effect from Code
 
 # SYNOPSIS
 
     use SideEffect::Detector;
+    my $code = 'my $x = 2; $x = $x + 1;';
+    if ( SideEffect::Detector->has_sideeffect($code) ) {
+        print $SideEffect::Detector::ERROR."\n";
+    }
+    
+
+    # or raise error when $code has side-effect
+    
+
+    SideEffect::Detector->detect($code); 
 
 # DESCRIPTION
 
-SideEffect::Detector is ...
+SideEffect::Detector detects side-effect from supplied code.
 
 # LICENSE
 
